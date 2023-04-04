@@ -1,0 +1,7 @@
+{
+  "name": "iot",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

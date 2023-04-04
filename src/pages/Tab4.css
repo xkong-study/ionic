@@ -1,0 +1,48 @@
+.bin-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 50px auto;
+}
+
+.bin-body {
+    position: absolute;
+    width: 12rem;
+    height: 10rem;
+    bottom: 0;
+    top:4rem;
+    left: .5rem;
+    background-image: url("../bin/bin1.png");
+    background-position: center left 15px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.bin-lid {
+    position: absolute;
+    width: 75%;
+    height: 20%;
+    left: 12.5%;
+    background-image: url("../bin/bin_map.png");
+    background-size: cover; /* 缩放背景图像以适应元素大小 */
+    background-position: center; /* 将背景图像居中对齐 */
+    transform: translateY(-1rem); /* 初始状态为0 */
+    transition: transform 0.5s ease-in; /* 将transform属性应用于transition */
+    z-index: 99;
+}
+
+.bin-lid.open {
+    transform: translateY(1rem);
+    background-image: url("../bin/bin_map.png");
+    background-size: cover; /* 缩放背景图像以适应元素大小 */
+    background-position: center; /* 将背景图像居中对齐 */
+    z-index: 99;
+}
+
+.bin-lid.compress {
+    transform: translateY(3rem);
+    background-image: url("../bin/bin_map.png");
+    background-size: cover; /* 缩放背景图像以适应元素大小 */
+    background-position: center; /* 将背景图像居中对齐 */
+    z-index: 99;
+}
