@@ -7,3 +7,7 @@ export const BinDataApi = (params: any) => request.get('/bin/info', params)
 export const LoginApi = (params:any) => request.post('/user/account/login', params)
 
 export const PostApi = (params:any) => request.post('/publish',params)
+
+export const Instructor = (params:any) => request.post('/instruction',params)
+
+

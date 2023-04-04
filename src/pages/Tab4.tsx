@@ -2,6 +2,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/rea
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import './Tab4.css';
 import {Button,CapsuleTabs} from "antd-mobile";
+import {BinDataApi, Instructor} from "../request/api";
 
 const Tab4: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +13,34 @@ const Tab4: React.FC = () => {
         setIsOpen(!isOpen);
         setCount(1)
     };
+    useEffect(()=>{
+        if(isOpen==true){
+            let params={type:'open'}
+            Instructor({params}).then(res => {
+                console.log(res)
+            }).catch(function (err) {
+                console.log(err)
+            })
+        }
+        if(isOpen==false){
+            let params={type:'close'}
+            Instructor({params}).then(res => {
+                console.log(res)
+            }).catch(function (err) {
+                console.log(err)
+            })
+        }
+
+        if(isCompress==true){
+            let params={type:'press'}
+            Instructor({params}).then(res => {
+                console.log(res)
+            }).catch(function (err) {
+                console.log(err)
+            })
+        }
+
+    },[isOpen,isCompress])
 
     const handleCompress = () => {
         setIsCompress(!isCompress);
