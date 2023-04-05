@@ -2,7 +2,8 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/rea
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import './Tab4.css';
 import {Button,CapsuleTabs} from "antd-mobile";
-import {BinDataApi, Instructor} from "../request/api";
+import { Instructor } from "../request/api";
+import axios from 'axios';
 
 const Tab4: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -13,34 +14,35 @@ const Tab4: React.FC = () => {
         setIsOpen(!isOpen);
         setCount(1)
     };
+
     useEffect(()=>{
         if(isOpen==true){
-            console.log(isOpen)
-            let params={type:0}
-            Instructor({params}).then(res => {
-                console.log(res)
-            }).catch(function (err) {
-                console.log(err)
-            })
+            axios.post('http://localhost:8100/instruction?type=0')
+                .then(response => {
+                    console.log(response.data);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
         }
         if(isOpen==false){
-            console.log(isOpen)
-            let params={type:1}
-            Instructor({params}).then(res => {
-                console.log(res)
-            }).catch(function (err) {
-                console.log(err)
-            })
+            axios.post('http://localhost:8100/instruction?type=1')
+                .then(response => {
+                    console.log(response.data);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
         }
 
         if(isCompress==true){
-            console.log(isCompress)
-            let params={type:2}
-            Instructor({params}).then(res => {
-                console.log(res)
-            }).catch(function (err) {
-                console.log(err)
-            })
+            axios.post('http://localhost:8100/instruction?type=2')
+                .then(response => {
+                    console.log(response.data);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
         }
 
     },[isOpen,isCompress])

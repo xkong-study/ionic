@@ -92,6 +92,8 @@ const Tab3: React.FC = () => {
         })
     }
 
+    api()
+
     const [showComponent, setShowComponent] = useState(false);
     useEffect(() => {
         const timeoutId = setTimeout(() => {
