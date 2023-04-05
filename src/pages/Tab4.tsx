@@ -8,15 +8,15 @@ import axios from 'axios';
 const Tab4: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isCompress, setIsCompress] = useState(false);
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(1);
 
     const handleClick = () => {
         setIsOpen(!isOpen);
-        setCount(1)
+        setCount(0)
     };
 
     useEffect(()=>{
-        if(isOpen==true){
+        if(isOpen==true&&isCompress==false ){
             axios.post('http://localhost:8100/instruction?type=0')
                 .then(response => {
                     console.log(response.data);
@@ -25,7 +25,7 @@ const Tab4: React.FC = () => {
                     console.log(error);
                 });
         }
-        if(isOpen==false){
+        if(isOpen==false&&isCompress==false){
             axios.post('http://localhost:8100/instruction?type=1')
                 .then(response => {
                     console.log(response.data);
@@ -49,7 +49,6 @@ const Tab4: React.FC = () => {
 
     const handleCompress = () => {
         setIsCompress(!isCompress);
-        setCount(0)
     };
 
 

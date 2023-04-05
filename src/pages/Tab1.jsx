@@ -27,9 +27,6 @@ const Tab1: React.FC = () => {
                 setEmergencyLevel(data.EmergencyLevel);
                 setTime(time_change)
             };
-            return () => {
-                ws.close();
-            };
         }, []);
 
         function Change_time(){
@@ -60,7 +57,7 @@ return (
           <div style={{width: "100%", height: "70%"}}>
           <img src="https://media.istockphoto.com/id/1138875155/vector/isolated-metallic-trash-can-vector-design-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=jRrVx3ev4_n2pErKMMLRmZbDZMe6bZpL2PEZUuG94NI=" alt=""
           style={{width: "auto", height: "30vh", marginTop: "5vh",marginLeft:"40%",transform:"translate(-5.8rem,0)"}}/>
-          <p style={{position: "relative", left: "20%", fontFamily: 'Knewave', fontSize:'1.2rem'}}><UilTemperature style={{width:".4rem",height:".4rem",color:"#44A723",border:".2rem",borderStyle:"solid",borderRadius:"50%",marginRight:".3rem"}}/>Temperature: {temperature}</p>
+          <p style={{position: "relative", left: "20%", fontFamily: 'Knewave', fontSize:'1.2rem'}}><UilTemperature style={{width:".4rem",height:".4rem",color:"#44A723",border:".2rem",borderStyle:"solid",borderRadius:"50%",marginRight:".3rem"}}/>Temperature: {temperature/10}</p>
           <p style={{position: "relative", left: "20%", fontFamily: 'Knewave', fontSize:'1.2rem'}}><UilWater style={{width:".4rem",height:".4rem",color:"#44A723",border:".2rem",borderStyle:"solid",borderRadius:"50%",marginRight:".3rem"}}/>Humidity: {humidity}</p>
           <p style={{position: "relative", left: "20%", fontFamily: 'Knewave', fontSize:'1.2rem'}}><UilBell style={{width:".4rem",height:".4rem",color:"#44A723",border:".2rem",borderStyle:"solid",borderRadius:"50%",marginRight:".3rem"}}/>EmergencyLevel: {emergencyLevel}</p>
           <p style={{position: "relative", left: "20%", fontFamily: 'Knewave', fontSize:'1.2rem'}}><UilHourglass style={{width:".4rem",height:".4rem",color:"#44A723",border:".2rem",borderStyle:"solid",borderRadius:"50%",marginRight:".3rem"}}/>Time: {time}</p>
