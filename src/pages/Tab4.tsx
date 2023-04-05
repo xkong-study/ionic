@@ -15,7 +15,8 @@ const Tab4: React.FC = () => {
     };
     useEffect(()=>{
         if(isOpen==true){
-            let params={type:'open'}
+            console.log(isOpen)
+            let params={type:0}
             Instructor({params}).then(res => {
                 console.log(res)
             }).catch(function (err) {
@@ -23,7 +24,8 @@ const Tab4: React.FC = () => {
             })
         }
         if(isOpen==false){
-            let params={type:'close'}
+            console.log(isOpen)
+            let params={type:1}
             Instructor({params}).then(res => {
                 console.log(res)
             }).catch(function (err) {
@@ -32,7 +34,8 @@ const Tab4: React.FC = () => {
         }
 
         if(isCompress==true){
-            let params={type:'press'}
+            console.log(isCompress)
+            let params={type:2}
             Instructor({params}).then(res => {
                 console.log(res)
             }).catch(function (err) {
